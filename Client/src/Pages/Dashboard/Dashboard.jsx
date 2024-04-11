@@ -11,6 +11,9 @@ import {
 } from "react-icons/ai";
 import { MapContainer, TileLayer, Marker, Popup } from "react-leaflet";
 import L from "leaflet";
+import "leaflet/dist/leaflet.css";
+import { Icon } from "leaflet";
+import icon from "../../assets/icon.jfif";
 
 const Dashboard = () => {
   const { user, Details, message } = useContext(UserContext);
@@ -25,6 +28,20 @@ const Dashboard = () => {
       }
     }
   }, [Details]);
+
+  console.log(Details);
+  let iconImg = Details.map((image) => image.goodsImage);
+  const greenIcon = new Icon({
+    iconUrl: Details.length > 0 ? iconImg : { icon },
+
+    shadowUrl: { icon },
+
+    iconSize: [38, 35],
+    shadowSize: [50, 64],
+    iconAnchor: [22, 94],
+    shadowAnchor: [4, 62],
+    popupAnchor: [-3, -76],
+  });
 
   return (
     <>
@@ -269,7 +286,7 @@ const Dashboard = () => {
             url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
             attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
           />
-          <Marker position={position}>
+          <Marker position={position} icon={greenIcon}>
             <Popup>Your selected location</Popup>
           </Marker>
         </MapContainer>
