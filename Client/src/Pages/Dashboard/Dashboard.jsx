@@ -17,19 +17,22 @@ import icon from "../../assets/icon.jfif";
 
 const Dashboard = () => {
   const { user, Details, message } = useContext(UserContext);
-  const [position, setPosition] = useState([0, 0]);
+  const [position, setPosition] = useState([51.505, -0.09]);
+
+  console.log(Details);
 
   useEffect(() => {
     // Update position when Details changes
-    if (Details.length > 0 && Details[0].location) {
-      const { coordinates } = Details[0].location;
-      if (coordinates && coordinates.length === 2) {
-        setPosition([coordinates[1], coordinates[0]]);
+    Details.forEach((detail) => {
+      if (detail.location) {
+        const { coordinates } = detail.location;
+        if (coordinates && coordinates.length === 2) {
+          setPosition([coordinates[1], coordinates[0]]);
+        }
       }
-    }
+    });
   }, [Details]);
 
-  console.log(Details);
   let iconImg = Details.map((image) => image.goodsImage);
   const greenIcon = new Icon({
     iconUrl: Details.length > 0 ? iconImg : { icon },

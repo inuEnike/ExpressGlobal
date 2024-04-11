@@ -73,6 +73,8 @@ const EditTrack = () => {
         recieverEmail,
         trackingStatus,
         seviceMode,
+        latitude,
+        longitude,
       } = response.data.info;
 
       setUser(response.data.info);
@@ -88,6 +90,7 @@ const EditTrack = () => {
       setRecieverEmail(recieverEmail);
       setTrackingStatus(trackingStatus);
       setSeviceMode(seviceMode);
+      setPosition([parseFloat(latitude), parseFloat(longitude)]);
     };
 
     fetchData();
