@@ -1,0 +1,58 @@
+
+        <div className=" overflow-x-scroll">
+          <div className="inline-block">
+            {" "}
+            <table className=" min-w-full">
+              <thead className="text-center border">
+                <tr>
+                  <td scope="col" className="py-2 px-2 border ">
+                    ID
+                  </td>
+                  <td scope="col" className="py-2 px-2 border ">
+                    From
+                  </td>
+                  <td scope="col" className="py-2 px-2 border ">
+                    To
+                  </td>
+                  <td scope="col" className="py-2 px-2 border ">
+                    Tracking Status
+                  </td>
+                  <td scope="col" className="py-2 px-2 border ">
+                    Service Mode
+                  </td>
+                  <td scope="col" className="py-2 px-2 border ">
+                    Weight
+                  </td>
+                  <td scope="col" className="py-2 px-2 border ">
+                    Reciever Name
+                  </td>
+                  <td scope="col" className="py-2 px-2 border ">
+                    Reciever Number
+                  </td>
+                  <td scope="col" className="py-2 px-2 border ">
+                    Courier
+                  </td>
+                  <td scope="col" className="py-2 px-2 border ">
+                    Action
+                  </td>
+                </tr>
+              </thead>
+              {TInfos.map((data) => (
+                <tbody className=" border ">
+                  <td className="py-5 px-2">{data._id}</td>
+                  <td>{data.from}</td>
+                  <td>{data.to}</td>
+                  <td>{data.trackingStatus}</td>
+                  <td>{data.seviceMode}</td>
+                  <td>{data.weight}</td>
+                  <td>{data.recieverName}</td>
+                  <td>0{data.recieverNumber}</td>
+
+                  <td>{data.courier.map((data) => data.email)}</td>
+
+                  <td>Hello</td>
+                </tbody>
+              ))}
+            </table>
+          </div>
+        </div>
