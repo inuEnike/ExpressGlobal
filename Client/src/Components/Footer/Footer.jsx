@@ -21,7 +21,7 @@ const Footer = () => {
           <div className="flex items-center">
             {" "}
             <FaPhoneAlt />
-            <p className="py-5 pl-3">09012113050</p>
+            <p className="py-5 pl-3">+1-234-3230-23</p>
           </div>
           <div className="flex items-center">
             <MdEmail />
