@@ -68,14 +68,14 @@ const Quote = () => {
 
           <div className="">
             <h2 className="text-4xl font-bold text-blue-500">
-              <Counter initialValue={1050} step={1} duration={10} />
+              <Counter initialValue={1050} step={1} duration={12} />
             </h2>
             <p className="text-xl ">Happy Clients</p>
           </div>
 
           <div className="md:pt-4">
             <h2 className="text-4xl font-bold text-blue-500">
-              <Counter initialValue={1050} step={1} duration={10} />
+              <Counter initialValue={1050} step={1} duration={12} />
             </h2>
             <p className="text-xl ">Happy Clients</p>
           </div>
