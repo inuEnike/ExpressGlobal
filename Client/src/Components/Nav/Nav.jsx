@@ -18,7 +18,7 @@ const Nav = () => {
       <nav className=" flex justify-between px-5 md:px-10 py-5 items-center">
         <div className="logo flex items-center text-2xl sm:text-xl md:text-4xl font-bold">
           <FaTruckFast color="rgb(147, 197, 253)" />
-          <span className="pl-2">Nothern Nights</span>
+          <span className="pl-2">Express Global</span>
         </div>
 
         <ul className="hidden md:flex font-bold text-sm capitalize">

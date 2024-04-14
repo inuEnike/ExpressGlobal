@@ -20,16 +20,23 @@ const Counter = ({ initialValue, step, duration }) => {
 
           return () => {
             clearInterval(interval);
+            if (targetRef.current) {
+              observer.unobserve(targetRef.current);
+            }
           };
         }
       },
       { threshold: 0.5 } // Trigger when 50% of the target is visible
     );
 
-    observer.observe(targetRef.current);
+    if (targetRef.current) {
+      observer.observe(targetRef.current);
+    }
 
     return () => {
-      observer.unobserve(targetRef.current);
+      if (targetRef.current) {
+        observer.unobserve(targetRef.current);
+      }
     };
   }, []);
 
