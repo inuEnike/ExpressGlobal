@@ -13,7 +13,7 @@ const Why = () => {
           Faster, Safe and Trusted Logistics Services
         </h2>
         <p className=" text-teal-700 text-lg place-items-center md:py-3 py-5">
-          Nothern Nights. is a low-cost shipping service that delivers to
+          Express Global. is a low-cost shipping service that delivers to
           businesses and is faster to more locations than UPS Ground
         </p>
         <button className="bg-blue-500 btn text-white">Learn More</button>
