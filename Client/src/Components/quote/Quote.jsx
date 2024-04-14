@@ -1,4 +1,40 @@
-import React from "react";
+import React, { useEffect, useRef, useState } from "react";
+
+const Counter = ({ initialValue, step, duration }) => {
+  const [count, setCount] = useState(0);
+  const targetRef = useRef(null);
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        if (entries[0].isIntersecting) {
+          let currentCount = 0;
+          const interval = setInterval(() => {
+            currentCount += step;
+            if (currentCount >= initialValue) {
+              setCount(initialValue);
+            } else {
+              setCount(currentCount);
+            }
+          }, duration);
+
+          return () => {
+            clearInterval(interval);
+          };
+        }
+      },
+      { threshold: 0.5 } // Trigger when 50% of the target is visible
+    );
+
+    observer.observe(targetRef.current);
+
+    return () => {
+      observer.unobserve(targetRef.current);
+    };
+  }, []);
+
+  return <span ref={targetRef}>{count}</span>;
+};
 
 const Quote = () => {
   return (
@@ -10,22 +46,30 @@ const Quote = () => {
         </h2>
         <div className=" text-black mt-10 py-5 grid md:grid-cols-3 grid-cols-2 md:gap-2 gap-6">
           <div className="">
-            <h2 className="text-4xl font-bold text-blue-500">223</h2>
+            <h2 className="text-4xl font-bold text-blue-500">
+              <Counter initialValue={223} step={1} duration={5} />
+            </h2>
             <p className="text-xl ">Skilled Expert</p>
           </div>
 
           <div className="">
-            <h2 className="text-4xl font-bold text-blue-500">99.9</h2>
+            <h2 className="text-4xl font-bold text-blue-500">
+              <Counter initialValue={99} step={1} duration={5} />
+            </h2>
             <p className="text-xl ">Finish Project</p>
           </div>
 
           <div className="">
-            <h2 className="text-4xl font-bold text-blue-500">1050</h2>
+            <h2 className="text-4xl font-bold text-blue-500">
+              <Counter initialValue={1050} step={1} duration={10} />
+            </h2>
             <p className="text-xl ">Happy Clients</p>
           </div>
 
           <div className="md:pt-4">
-            <h2 className="text-4xl font-bold text-blue-500">1050</h2>
+            <h2 className="text-4xl font-bold text-blue-500">
+              <Counter initialValue={1050} step={1} duration={10} />
+            </h2>
             <p className="text-xl ">Happy Clients</p>
           </div>
         </div>

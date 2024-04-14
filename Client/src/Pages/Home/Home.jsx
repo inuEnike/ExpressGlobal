@@ -9,6 +9,7 @@ import Services from "../../Components/services/Services";
 import Form from "../../Components/Form";
 import Why from "../../Components/Why/Why";
 import Footer from "../../Components/Footer/Footer";
+import Comments from "../../Components/Comments/Comments";
 
 const Home = () => {
   // window.scrollY(top);
@@ -44,6 +45,10 @@ const Home = () => {
 
       <div className=" bg-[#0000010e]">
         <Why />
+      </div>
+
+      <div className="my-10 ">
+        <Comments />
       </div>
       <div className="">
         <Footer />

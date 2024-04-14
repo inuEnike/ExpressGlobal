@@ -6,6 +6,7 @@ import { FaInstagram, FaWhatsapp } from "react-icons/fa6";
 import { MdEmail, MdOutlineAddLocationAlt } from "react-icons/md";
 
 const Footer = () => {
+  const currentYear = new Date().getFullYear();
   return (
     <div className="bg-[#1F1F2E]">
       <div className="grid md:grid-cols-3 gap-2 md:py-20 py-10 px-5 text-white ">
@@ -26,7 +27,7 @@ const Footer = () => {
             <MdEmail />
             <small>
               {" "}
-              <p className="pl-3">customercare.acmshippingco@gmail.com</p>
+              <p className="pl-3">richarddabrowaski06@gmail.com</p>
             </small>
           </div>
           <div className="flex my-10">
@@ -56,7 +57,7 @@ const Footer = () => {
             <input
               type="text"
               className="px-10 py-3 outline-none my-2 mr-3 w-[95%] md:w-[100%] text-slate-500"
-              placeholder="e.g inuenike@gmail.com....."
+              placeholder="e.g richarddabrowaski06@gmail.com....."
               required
             />
             <button className="bg-blue-500 btn text-white">Submit</button>
@@ -65,7 +66,7 @@ const Footer = () => {
       </div>
       <small>
         <p className="text-center text-white py-5">
-          copyright @ 2023 | Designed and Developed by Chief George
+          copyright &#64; {currentYear} | Designed and Developed by Chief George
         </p>
       </small>
     </div>
