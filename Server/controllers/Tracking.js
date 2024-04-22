@@ -126,15 +126,24 @@ const updateInfo = async (req, res, next) => {
       },
     });
     await transporter.sendMail({
-      from: "inuenike@gmail.com", // sender address
+      from: "customer.info@expressglobaldeliveryuk.com", // Sender address
       to: recieverEmail,
-      subject: "Tracking Process", // Subject line
-      text: "Hello world?", // plain text body
+      subject: "Tracking Update", // Subject line
+      text: "Dear Customer,", // Plain text body
       html: `
-                  <h3>Hello ${recieverName}, your goods with the Tracking ID of ${courierInfo.TrackingId} has been updated to <span style="color: red"> ${trackingStatus}</span></h3>
-                  <p>For more information contact inuenike@gmail.com</p>
-              `, // html body
+        <div style="font-family: Arial, sans-serif;">
+          <p style="font-size: 16px;">Dear ${recieverName},</p>
+          <p style="font-size: 16px;">We are writing to inform you about the latest update regarding your shipment with Tracking ID: <strong>${courierInfo.TrackingId}</strong>.</p>
+          <p style="font-size: 16px;">The current status of your shipment has been updated to: <span style="color: red;">${trackingStatus}</span>.</p>
+          <p style="font-size: 16px;">For further information or assistance, please visit our website <a href="https://www.expressglobaldeliveryuk.com" target="_blank">Express Global Delivery UK</a> or contact us at <a href="mailto:customer.info@expressglobaldeliveryuk.com">customer.info@expressglobaldeliveryuk.com</a>.</p>
+          <p style="font-size: 14px;">Thank you for choosing our services.</p>
+          <p style="font-size: 14px;">Best regards,</p>
+          <p style="font-size: 14px;">Express Global Delivery UK Team</p>
+          <p style="font-size: 12px; color: #999;">&copy; 2024 Express Global Delivery UK. All rights reserved.</p>
+        </div>
+      `, // HTML body
     });
+    
 
     console.log("Message sent: %s");
     res.json({ info });
