@@ -31,7 +31,7 @@ const About = () => {
         </p>
         <p className=" py-2 text-justify text-teal-700">
           With a focus on reliability, efficiency, and customer satisfaction,
-          Safe & Faster Logistics is your trusted partner for all your
+          Express Global Logistics is your trusted partner for all your
           transportation needs. Contact us today to learn more about how we can
           help streamline your logistics operations and support your business
           growth.

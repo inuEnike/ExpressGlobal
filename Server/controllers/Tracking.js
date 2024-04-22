@@ -105,7 +105,7 @@ const updateInfo = async (req, res, next) => {
   try {
     const file = (await req.file) ? req.file.path : null;
     const courierInfo = await Courier.findById(courier);
-
+    console.log(courierInfo);
     const info = await TrackInfo.findByIdAndUpdate(req.params.id, {
       courier,
       goodsImage: file,
@@ -143,7 +143,6 @@ const updateInfo = async (req, res, next) => {
         </div>
       `, // HTML body
     });
-    
 
     console.log("Message sent: %s");
     res.json({ info });

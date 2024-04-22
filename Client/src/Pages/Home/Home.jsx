@@ -26,7 +26,7 @@ const Home = () => {
           }
           form={<Form />}
           text={
-            " Nothern Nights is a low-cost shipping service that delivers to businesses and is faster to more locations than UPS Ground. we have 25+ years"
+            "Express Global is a low-cost shipping service that delivers to businesses and is faster to more locations than UPS Ground. we have 25+ years"
           }
         />
         <Icon />
