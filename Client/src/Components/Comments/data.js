@@ -29,14 +29,14 @@ export const data = [
     name: "Faith George",
     text: ` Lorem ipsum dolor sit amet consectetur, adipisicing elit. Esse cupiditate consequatur,
          totam explicabo veritatis ullam natus unde, perspiciatis, earum ab possimus animi a.`,
-    image: person3,
+    image: person2,
     job: "Accountant Personel",
   },
   {
     name: "Ennygenius",
     text: ` Lorem ipsum dolor sit amet consectetur, adipisicing elit. Esse cupiditate consequatur,
      totam explicabo veritatis ullam natus unde, perspiciatis, earum ab possimus animi a.`,
-    image: person3,
+    image: person1,
     job: "Lawyer",
   },
 ];

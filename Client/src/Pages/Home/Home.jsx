@@ -1,7 +1,6 @@
 import React from "react";
 import Nav from "../../Components/Nav/Nav";
 import Header from "../../Components/Header";
-
 import Icon from "../../Components/Icon";
 import About from "../../Components/about/About";
 import Quote from "../../Components/quote/Quote";
@@ -12,7 +11,6 @@ import Footer from "../../Components/Footer/Footer";
 import Comments from "../../Components/Comments/Comments";
 
 const Home = () => {
-  // window.scrollY(top);
   return (
     <div>
       <div className=" bg text-lg md:h-screen w-full bg-cover text-white py-5">
@@ -28,7 +26,7 @@ const Home = () => {
           }
           form={<Form />}
           text={
-            " Lorem ipsum dolor sit amet consectetur, adipisicing elit. Esse cupiditate consequatur, totam explicabo veritatis ullam natus unde, perspiciatis, earum ab possimus animi a."
+            " Nothern Nights is a low-cost shipping service that delivers to businesses and is faster to more locations than UPS Ground. we have 25+ years"
           }
         />
         <Icon />

@@ -12,13 +12,29 @@ const About = () => {
       </div>
       <div className="md:my-0 my-10 ">
         <h2 className=" font-bold text-blue-500 text-xl">ABOUT US</h2>
-        <h2 className="text-2xl md:text-4xl md:font-bold text-[red]">
-          Trusted & Faster Logistic Service Provider
+        <h2 className="text-2xl md:text-4xl md:font-bold text-[red] py-5">
+          Providing Reliable Transportation Solutions
         </h2>
         <p className=" py-2 text-justify text-teal-700">
-          Nothern Nights is a low-cost shipping service that delivers to
-          businesses and is faster to more locations than UPS Ground. we have
-          25+ years
+          At Express Global Logistics, we understand the importance of timely
+          and secure transportation for your goods. With our commitment to
+          excellence and safety, we offer dependable logistics services tailored
+          to meet your specific needs.
+        </p>
+
+        <p className=" py-2 text-justify text-teal-700">
+          Our team of experienced professionals ensures that your cargo is
+          handled with the utmost care and efficiency, guaranteeing its safe and
+          timely delivery to its destination. Whether you require local
+          distribution or long-haul transportation, we have the expertise and
+          resources to get the job done right.
+        </p>
+        <p className=" py-2 text-justify text-teal-700">
+          With a focus on reliability, efficiency, and customer satisfaction,
+          Safe & Faster Logistics is your trusted partner for all your
+          transportation needs. Contact us today to learn more about how we can
+          help streamline your logistics operations and support your business
+          growth.
         </p>
       </div>
     </div>

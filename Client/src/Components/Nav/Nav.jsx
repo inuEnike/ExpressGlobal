@@ -13,6 +13,7 @@ const Nav = () => {
     setNavOpen(!navOpen);
     console.log("clicked");
   };
+
   return (
     <div className="">
       <nav className=" flex justify-between px-5 md:px-10 py-5 items-center">
