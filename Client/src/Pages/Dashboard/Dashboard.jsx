@@ -37,8 +37,6 @@ const Dashboard = () => {
   const greenIcon = new Icon({
     iconUrl: Details.length > 0 ? iconImg : { icon },
 
-    shadowUrl: { icon },
-
     iconSize: [38, 35],
     shadowSize: [50, 64],
     iconAnchor: [22, 94],
