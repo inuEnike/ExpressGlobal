@@ -21,13 +21,20 @@ const Footer = () => {
           <div className="flex items-center">
             {" "}
             <FaPhoneAlt />
-            <p className="py-5 pl-3">+1-234-3230-23</p>
+            <p className="py-5 pl-3">
+              {" "}
+              <a href="tel:+447529655131">+44 7529 655131</a>{" "}
+            </p>
           </div>
           <div className="flex items-center">
             <MdEmail />
             <small>
               {" "}
-              <p className="pl-3">richarddabrowaski06@gmail.com</p>
+              <p className="pl-3">
+                <a href="mailto:customercare@expressglobaldeliveryuk.com">
+                  customercare@expressglobaldeliveryuk.com
+                </a>
+              </p>
             </small>
           </div>
           <div className="flex my-10">
@@ -66,7 +73,8 @@ const Footer = () => {
       </div>
       <small>
         <p className="text-center text-white py-5">
-          copyright &#64; {currentYear} | Designed and Developed by Chief George
+          copyright &#64; {currentYear} | Designed and Developed by{" "}
+          <a href="https://inu-george.netlify.app"> Chief George</a>
         </p>
       </small>
     </div>

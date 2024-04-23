@@ -5,37 +5,32 @@ import person3 from "../../assets/testimonial-4.jpg";
 export const data = [
   {
     name: "Martins Jacob",
-    text: ` Lorem ipsum dolor sit amet consectetur, adipisicing elit. Esse cupiditate consequatur,
-     totam explicabo veritatis ullam natus unde, perspiciatis, earum ab possimus animi a.`,
+    text: `Express Global Delivery UK provides exceptional service, ensuring my packages arrive safely and on time.`,
     image: person1,
     job: "Accountant",
   },
 
   {
     name: "Luthre Daniels",
-    text: ` Lorem ipsum dolor sit amet consectetur, adipisicing elit. Esse cupiditate consequatur,
-     totam explicabo veritatis ullam natus unde, perspiciatis, earum ab possimus animi a.`,
+    text: `I'm impressed by the professionalism and efficiency of Express Global Delivery UK. They make shipping hassle-free.`,
     image: person2,
     job: "Developer",
   },
   {
     name: "Magnus Philimon",
-    text: ` Lorem ipsum dolor sit amet consectetur, adipisicing elit. Esse cupiditate consequatur,
-     totam explicabo veritatis ullam natus unde, perspiciatis, earum ab possimus animi a.`,
+    text: `Express Global Delivery UK's commitment to quality and customer satisfaction sets them apart. I highly recommend their services.`,
     image: person3,
     job: "Chief Officer",
   },
   {
     name: "Faith George",
-    text: ` Lorem ipsum dolor sit amet consectetur, adipisicing elit. Esse cupiditate consequatur,
-         totam explicabo veritatis ullam natus unde, perspiciatis, earum ab possimus animi a.`,
+    text: `As an accountant, I trust Express Global Delivery UK for all my shipping needs. Their reliability and attention to detail are unmatched.`,
     image: person2,
-    job: "Accountant Personel",
+    job: "Accountant Personnel",
   },
   {
     name: "Ennygenius",
-    text: ` Lorem ipsum dolor sit amet consectetur, adipisicing elit. Esse cupiditate consequatur,
-     totam explicabo veritatis ullam natus unde, perspiciatis, earum ab possimus animi a.`,
+    text: `Express Global Delivery UK's legal team ensures peace of mind with their thorough understanding of shipping laws and regulations.`,
     image: person1,
     job: "Lawyer",
   },
