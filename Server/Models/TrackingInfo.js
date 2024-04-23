@@ -65,8 +65,8 @@ const TInfo = new mongoose.Schema({
     required: true,
   },
   location: {
-    type: { type: String },
-    coordinates: { type: [Number], default: [0, 0] },
+    type: { type: String, default: "Point" },
+    coordinates: { type: [Number], default: [-110.8571443, 32.4586858] },
   },
 });
 

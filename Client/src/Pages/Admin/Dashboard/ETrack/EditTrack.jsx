@@ -28,25 +28,6 @@ const EditTrack = () => {
   const [seviceMode, setSeviceMode] = useState("");
   const [loading, setLoading] = useState(false);
 
-  const [position, setPosition] = useState([0, 0]);
-
-  const handleAddressChange = async (e) => {
-    setAddress(e.target.value);
-    try {
-      const response = await fetch(
-        `https://nominatim.openstreetmap.org/search?format=json&q=${encodeURIComponent(
-          e.target.value
-        )}`
-      );
-      const data = await response.json();
-      if (data.length > 0) {
-        setPosition([parseFloat(data[0].lat), parseFloat(data[0].lon)]);
-      }
-    } catch (error) {
-      console.error("Error fetching coordinates:", error);
-    }
-  };
-
   useEffect(() => {
     const fetchData = async () => {
       const response = await Base.get(URI2);
@@ -90,15 +71,29 @@ const EditTrack = () => {
       setRecieverEmail(recieverEmail);
       setTrackingStatus(trackingStatus);
       setSeviceMode(seviceMode);
-      setPosition([parseFloat(latitude), parseFloat(longitude)]);
     };
 
     fetchData();
   }, []);
 
-  const EditTrans = async () => {
-    setLoading(true);
+  const generateCoordinates = async () => {
+    try {
+      const response = await fetch(
+        `https://nominatim.openstreetmap.org/search?format=json&q=${encodeURIComponent(
+          address
+        )}`
+      );
+      const data = await response.json();
+      if (data.length > 0) {
+        const { lat, lon } = data[0];
+        await updateTrackInfo(lat, lon);
+      }
+    } catch (error) {
+      console.error("Error fetching coordinates:", error);
+    }
+  };
 
+  const updateTrackInfo = async (latitude, longitude) => {
     try {
       const formData = new FormData();
       formData.append("courier", courier);
@@ -113,15 +108,13 @@ const EditTrack = () => {
       formData.append("trackingStatus", trackingStatus);
       formData.append("recieverEmail", recieverEmail);
       formData.append("file", goodsImage);
-      formData.append("latitude", position[0]);
-      formData.append("longitude", position[1]);
+      formData.append("latitude", latitude);
+      formData.append("longitude", longitude);
 
       const base = await Base.patch(URI, formData);
       return base;
     } catch (error) {
       throw error;
-    } finally {
-      setLoading(false);
     }
   };
 
@@ -130,17 +123,20 @@ const EditTrack = () => {
       const file = e.target.files[0];
       setGoodsImage(file);
     } catch (error) {
-      console.log(error, "An error occured");
+      console.log(error, "An error occurred");
     }
   };
 
   const HandleSubmit = async (e) => {
     e.preventDefault();
     try {
-      await EditTrans();
+      setLoading(true);
+      await generateCoordinates();
+      setLoading(false);
       alert("Success");
       navigate("/admin");
     } catch (error) {
+      setLoading(false);
       console.log(error);
       toast("An error occurred. Please try again.");
     }
@@ -205,7 +201,7 @@ const EditTrack = () => {
             id="address"
             type="text"
             value={address}
-            onChange={handleAddressChange}
+            onChange={(e) => setAddress(e.target.value)}
             placeholder="Enter address"
             className="w-full p-3 border border-blue-200"
           />

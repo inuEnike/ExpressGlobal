@@ -58,7 +58,7 @@ const createInfo = async (req, res, next) => {
     }
 
     await transporter.sendMail({
-      from: "customer.info@expressglobaldeliveryuk.com", // Sender address
+      from: "customercare@expressglobaldeliveryuk.com", // Sender address
       to: recieverEmail,
       subject: "Tracking Update", // Subject line
       text: "Dear Customer,", // Plain text body
@@ -126,7 +126,7 @@ const updateInfo = async (req, res, next) => {
       },
     });
     await transporter.sendMail({
-      from: "customer.info@expressglobaldeliveryuk.com", // Sender address
+      from: "customercare@expressglobaldeliveryuk.com", // Sender address
       to: recieverEmail,
       subject: "Tracking Update", // Subject line
       text: "Dear Customer,", // Plain text body
