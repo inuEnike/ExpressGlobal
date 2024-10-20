@@ -6,16 +6,19 @@ import { UserContext } from "../Hooks/context/userContext";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import { USERLOGIN_URI } from "../Hooks/URI/UseURI";
+import { AiOutlineLoading3Quarters } from "react-icons/ai";
 
 const Form = (props) => {
   const [TrackingId, setTID] = useState("");
   const [message, setmessage] = useState("");
+  const [loading, setLoading] = useState(false);
   const { setUser } = useContext(UserContext);
   const navigate = useNavigate();
 
   const handleForm = async (e) => {
     e.preventDefault();
     try {
+      setLoading(true);
       const response = await Base.post(USERLOGIN_URI, {
         TrackingId,
       });
@@ -24,9 +27,10 @@ const Form = (props) => {
       if (message) {
         setmessage(message);
         toast(message);
+        setLoading(false);
       } else {
+        setLoading(false);
         setUser({ TrackingId, token });
-
         localStorage.setItem("token", token);
         navigate(`/dashboard`);
 
@@ -34,6 +38,7 @@ const Form = (props) => {
       }
     } catch (err) {
       console.log(err);
+      setLoading(false);
     }
   };
   return (
@@ -54,10 +59,16 @@ const Form = (props) => {
             setTID(e.target.value);
           }}
         />
-
-        <button className="bg-blue-300 btn" type="submit">
-          Submit
-        </button>
+        {loading ? (
+          <button className="bg-blue-300 btn flex justify-center" type="submit">
+            {/* <AiOutlineLoading3Quarters /> */}
+            loading...
+          </button>
+        ) : (
+          <button className="bg-blue-300 btn" type="submit">
+            Submit
+          </button>
+        )}
       </form>
     </div>
   );
